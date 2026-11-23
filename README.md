@@ -2,6 +2,51 @@
 
 A starter scaffold for the IA3 project. This is **not yet the finished experiment**. It sets up the environment and verifies the dataset before model training.
 
+## Quick start (after cloning)
+
+The dataset, model weights and trained outputs are **not** in this repository. Get them as follows.
+
+**1. Python environment** (Python 3.10+)
+
+```bash
+python -m venv .venv
+# Windows:      .venv\Scripts\activate
+# macOS/Linux:  source .venv/bin/activate
+pip install -r requirements.txt
+# CPU-only PyTorch (smaller download), if you have no NVIDIA GPU:
+# pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+```
+
+**2. Dataset** - download [Kaggle: masoudnickparvar/brain-tumor-mri-dataset](https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset) and extract it so the project contains `archive/Training/{glioma,meningioma,notumor,pituitary}` and `archive/Testing/...`. With the Kaggle CLI:
+
+```bash
+kaggle datasets download -d masoudnickparvar/brain-tumor-mri-dataset -p archive --unzip
+```
+
+**3. Pretrained classifier weights** (EfficientNet-B3, 43 MB, Apache-2.0, from [Phi-007/brain-tumor-classifier](https://github.com/Phi-007/brain-tumor-classifier)):
+
+```bash
+mkdir -p external_models/brain_tumor_classifier/weights
+curl -L -o external_models/brain_tumor_classifier/weights/best_model.pth \
+  https://github.com/Phi-007/brain-tumor-classifier/raw/main/weights/best_model.pth
+```
+
+Expected SHA-256: `7840ed87964a5ce06c0866b167e5624bb259a58895139c9687163c3f77d77c4a` (the web app refuses the file if it differs).
+
+**4. Check that it works**
+
+```bash
+python src/check_environment.py
+python src/inspect_dataset.py --data-dir archive
+python src/eval_pretrained_classifier.py --device cpu   # expect accuracy 0.9594 on archive/Testing
+```
+
+**What works without further steps:** dataset pipeline, GAN training scripts (`src/dcgan_train.py`, `src/wgangp_train.py`, `src/cwgangp_train.py`), classifier evaluation, and the web app's *Classify MRI* page (`app/README.md`; on Windows/Linux run the backend with `python -m uvicorn app.backend.main:app --port 8000` and the frontend with `npm run dev` in `app/frontend`).
+
+**What needs a trained GAN first:** the web app's *Generate*, *Dashboard*, *Results* and *Gallery* pages read `outputs/deduplicated_experiment/` (cWGAN-GP checkpoint + saved metrics), which is not published. Produce it by running the Phase 7 pipeline below (`src/dedup_split.py`, `scripts/run_dedup_gans.py`, `scripts/run_dedup_stage2.py`); GAN training takes hours, faster with a GPU. Until then those pages report "unavailable".
+
+The rest of this README is the original research log (written on macOS; replace `.venv/bin/python` with `.venv\Scripts\python` on Windows).
+
 ## Planned experiment
 
 - Dataset: four-class 2D Brain Tumor MRI dataset (glioma, meningioma, pituitary, no tumor)
