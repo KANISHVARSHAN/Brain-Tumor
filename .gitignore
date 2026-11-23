@@ -1,0 +1,37 @@
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+kaggle.json
+data/
+outputs/
+checkpoints/
+runs/
+*.pth
+*.pt
+*.ckpt
+external_models/brain_mri_inpaint_gan/00007_INPAINT_BRAIN_MRI.zip
+# dataset images and large third-party archives (do not upload patient data / weights)
+archive/
+external_models/*.zip
+external_models/**/*.zip
+external_models/brain_mri_inpaint_gan/extracted/Norm_slice/
+external_models/brain_mri_inpaint_gan/extracted/temp_slice/
+# reports, slides and coursework tooling (kept locally, not part of the codebase)
+*.pdf
+*.pptx
+*.docx
+assign 2.png
+templates/
+scripts/build_submission_docs.py
+scripts/build_submission_package.py
+scripts/verify_submission_package.py
+scripts/render_slide_preview.py
+scripts/build_dedup_report.py
+scripts/ia3_autopilot.py
+scripts/ia3_final_artifacts.py
+scripts/ia3_overnight_chain.py
+scripts/test_ia3_autopilot.py
+scripts/run_ia3_autopilot.sh
+scripts/IA3_AUTOPILOT.md

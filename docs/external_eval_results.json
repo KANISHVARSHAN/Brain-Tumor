@@ -1,0 +1,275 @@
+[
+  {
+    "dataset": "Kaggle masoudnickparvar Testing (fresh download)",
+    "n": 1600,
+    "accuracy": 0.959375,
+    "exact_duplicates_of_training_images": 0,
+    "accuracy_excluding_training_duplicates": 0.959375,
+    "n_excluding_training_duplicates": 1600,
+    "per_class_recall": {
+      "glioma": 0.8525,
+      "meningioma": 0.9925,
+      "notumor": 1.0,
+      "pituitary": 0.9925
+    },
+    "confusion_matrix(rows=true,cols=pred glioma/meningioma/notumor/pituitary)": {
+      "glioma": [
+        341,
+        31,
+        27,
+        1
+      ],
+      "meningioma": [
+        0,
+        397,
+        2,
+        1
+      ],
+      "notumor": [
+        0,
+        0,
+        400,
+        0
+      ],
+      "pituitary": [
+        0,
+        3,
+        0,
+        397
+      ]
+    },
+    "mean_confidence_correct": 0.9164855219836344,
+    "mean_confidence_wrong": 0.7297573836950155
+  },
+  {
+    "dataset": "Kaggle SARTAJ Testing",
+    "n": 394,
+    "accuracy": 0.8045685279187818,
+    "exact_duplicates_of_training_images": 141,
+    "accuracy_excluding_training_duplicates": 0.7470355731225297,
+    "n_excluding_training_duplicates": 253,
+    "per_class_recall": {
+      "glioma": 0.4,
+      "meningioma": 0.991304347826087,
+      "notumor": 1.0,
+      "pituitary": 0.7837837837837838
+    },
+    "confusion_matrix(rows=true,cols=pred glioma/meningioma/notumor/pituitary)": {
+      "glioma": [
+        40,
+        32,
+        27,
+        1
+      ],
+      "meningioma": [
+        0,
+        114,
+        1,
+        0
+      ],
+      "notumor": [
+        0,
+        0,
+        105,
+        0
+      ],
+      "pituitary": [
+        0,
+        10,
+        6,
+        58
+      ]
+    },
+    "mean_confidence_correct": 0.8961106035799634,
+    "mean_confidence_wrong": 0.76788729429245
+  },
+  {
+    "dataset": "Kaggle fernando2rad 44-class (independent source; glioma family / meningioma / normal)",
+    "n": 2403,
+    "accuracy": 0.4253017062005826,
+    "exact_duplicates_of_training_images": 0,
+    "accuracy_excluding_training_duplicates": 0.4253017062005826,
+    "n_excluding_training_duplicates": 2403,
+    "per_class_recall": {
+      "glioma": 0.1420059582919563,
+      "meningioma": 0.4496567505720824,
+      "notumor": 0.9310344827586207
+    },
+    "confusion_matrix(rows=true,cols=pred glioma/meningioma/notumor/pituitary)": {
+      "glioma": [
+        143,
+        181,
+        676,
+        7
+      ],
+      "meningioma": [
+        78,
+        393,
+        397,
+        6
+      ],
+      "notumor": [
+        4,
+        29,
+        486,
+        3
+      ]
+    },
+    "mean_confidence_correct": 0.8269664556254612,
+    "mean_confidence_wrong": 0.7805768329323762,
+    "out_of_scope_tumour_predictions": {
+      "Carcinoma T1": {
+        "notumor": 60,
+        "meningioma": 3,
+        "glioma": 3
+      },
+      "Carcinoma T1C+": {
+        "meningioma": 60,
+        "notumor": 46,
+        "glioma": 5,
+        "pituitary": 1
+      },
+      "Carcinoma T2": {
+        "notumor": 66,
+        "meningioma": 7
+      },
+      "Ependimoma T1": {
+        "notumor": 35,
+        "glioma": 5,
+        "pituitary": 4,
+        "meningioma": 1
+      },
+      "Ependimoma T1C+": {
+        "notumor": 20,
+        "glioma": 12,
+        "pituitary": 3,
+        "meningioma": 13
+      },
+      "Ependimoma T2": {
+        "meningioma": 23,
+        "notumor": 28,
+        "glioma": 6
+      },
+      "Ganglioglioma T1": {
+        "notumor": 16,
+        "pituitary": 2,
+        "glioma": 2
+      },
+      "Ganglioglioma T1C+": {
+        "glioma": 13,
+        "notumor": 3,
+        "pituitary": 2
+      },
+      "Ganglioglioma T2": {
+        "notumor": 20,
+        "meningioma": 3
+      },
+      "Germinoma T1": {
+        "notumor": 22,
+        "glioma": 5
+      },
+      "Germinoma T1C+": {
+        "glioma": 19,
+        "pituitary": 2,
+        "meningioma": 14,
+        "notumor": 5
+      },
+      "Germinoma T2": {
+        "notumor": 32,
+        "meningioma": 1
+      },
+      "Granuloma T1": {
+        "notumor": 15,
+        "meningioma": 8,
+        "pituitary": 7
+      },
+      "Granuloma T1C+": {
+        "meningioma": 19,
+        "pituitary": 5,
+        "notumor": 7
+      },
+      "Granuloma T2": {
+        "pituitary": 1,
+        "meningioma": 4,
+        "notumor": 12
+      },
+      "Meduloblastoma T1": {
+        "glioma": 7,
+        "notumor": 14,
+        "pituitary": 2
+      },
+      "Meduloblastoma T1C+": {
+        "pituitary": 5,
+        "notumor": 41,
+        "glioma": 12,
+        "meningioma": 9
+      },
+      "Meduloblastoma T2": {
+        "notumor": 30,
+        "meningioma": 10,
+        "glioma": 1
+      },
+      "Neurocitoma T1": {
+        "notumor": 105,
+        "glioma": 21,
+        "meningioma": 3,
+        "pituitary": 1
+      },
+      "Neurocitoma T1C+": {
+        "meningioma": 9,
+        "glioma": 44,
+        "pituitary": 3,
+        "notumor": 167
+      },
+      "Neurocitoma T2": {
+        "notumor": 90,
+        "meningioma": 14
+      },
+      "Papiloma T1": {
+        "notumor": 51,
+        "pituitary": 8,
+        "glioma": 2,
+        "meningioma": 5
+      },
+      "Papiloma T1C+": {
+        "meningioma": 72,
+        "notumor": 33,
+        "pituitary": 3
+      },
+      "Papiloma T2": {
+        "notumor": 37,
+        "meningioma": 26
+      },
+      "Schwannoma T1": {
+        "notumor": 88,
+        "meningioma": 22,
+        "glioma": 23,
+        "pituitary": 15
+      },
+      "Schwannoma T1C+": {
+        "meningioma": 129,
+        "glioma": 47,
+        "notumor": 16,
+        "pituitary": 2
+      },
+      "Schwannoma T2": {
+        "notumor": 74,
+        "meningioma": 40,
+        "glioma": 9
+      },
+      "Tuberculoma T1": {
+        "meningioma": 9,
+        "notumor": 19
+      },
+      "Tuberculoma T1C+": {
+        "meningioma": 2,
+        "notumor": 39,
+        "glioma": 43
+      },
+      "Tuberculoma T2": {
+        "notumor": 30,
+        "glioma": 3
+      }
+    }
+  }
+]
